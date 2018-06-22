@@ -5,16 +5,23 @@ stream stock quotes and futures with nodejs
 
 nodejs quoteStream.js
 
-save initial access_token and refresh_token response in a file as outlined in
+save initial access_token and refresh_token response in a file tdoa.json as outlined in
 https://developer.tdameritrade.com/content/simple-auth-local-apps
 
-php tdAuth.php subscription => get subscription credetials for node streamer above
+php tdAuth.php subscription => get subscription credentials for node streamer above
 
 more functions:
 - movers
 - hours
 - quotes
 - order (regular and orderext for after hour orders)
+- ordercancel
+- orderstatus
+- transactions
+- history
+
 ...
 
 see file.
+
+IMPORTANT: make sure to run this in a protected / single user / vm (or docker) enviroment.
