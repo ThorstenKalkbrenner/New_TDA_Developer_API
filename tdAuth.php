@@ -50,6 +50,11 @@ if ($age > $expiresecs && $i == 0) {
 else if ($argv[1] == 'history') {
     $cmd = 'curl -s -X GET --header "Authorization: Bearer '.$d->access_token.'" "https://api.tdameritrade.com/v1/marketdata/AMZN/pricehistory?periodType=day&period=10&frequencyType=minute&frequency=1"';
 }
+    
+else if ($argv[1] == 'historytoday') {
+    $cmd = 'curl -s -X GET --header "Authorization: Bearer '.$d->access_token.'" "https://api.tdameritrade.com/v1/marketdata/AMZN/pricehistory?\
+periodType=day&period=5&frequencyType=minute&frequency=1&endDate='.(time()*1000).'"';
+}
 
 else if ($argv[1] == 'transactions') {
     $cmd = 'curl -s -X GET --header "Authorization: Bearer '.$d->access_token.'" ""https://api.tdameritrade.com/v1/accounts/'.$userid.'/transactions?symbol="'.$argv[2].'&startDate=2018-01-01"';
