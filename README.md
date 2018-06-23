@@ -1,11 +1,10 @@
 # TDA_Developer_API
-new TDA developer API tools
+TDA developer API tools based on https://developer.tdameritrade.com/apis
 
-stream stock quotes and futures with nodejs
+stream stock quotes and futures with nodejs and saves quotes, asks and bids on filesystem:
 
 nodejs quoteStream.js
 
-saves quotes, asks and bids on filesystem
 
 to use:
 1.) save initial access_token and refresh_token response in a file tdoa.json as outlined in
