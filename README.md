@@ -23,6 +23,21 @@ more functions:
 - transactions
 - history
 
+examples:
+
+# falling / rising stocks:
+php tdAuth.php movers COMPX up
+php tdAuth.php movers SPX.X down
+
+# market hours
+php tdAuth.php hours
+
+# buy in extented hours 300 XLI limit 74.82
+php tdAuth.php orderext buy 300 XLI 74.82
+
+# Quote
+php tdAuth.php quotes AAPL
+
 ...
 
 see file.
