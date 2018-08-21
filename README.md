@@ -27,6 +27,7 @@ examples:
 
 # falling / rising stocks:
 php tdAuth.php movers COMPX up
+
 php tdAuth.php movers SPX.X down
 
 # market hours
