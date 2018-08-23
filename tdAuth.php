@@ -4,6 +4,7 @@
 
 $path   = "logs/";
 $userid = ''; // tda userid
+$appid = 'ABCD%40AMER.OAUTHA';
 
 $tokenfile = $path . "tdoa.json";
 $userid = 
@@ -18,7 +19,7 @@ if ($argc == 1) { $argv[1] = 'positions'; }
 
 function refreshAuth() {
     global $d, $tokenfile, $path;
-    $cmdr = 'curl -s -X POST --header "Content-Type: application/x-www-form-urlencoded" -d "grant_type=refresh_token&refresh_token='.urlencode($d->refresh_token).'&access_type=offline&code=&client_id=QBQB%40AMER.OAUTHAP&redirect_uri=" "https://api.tdameritrade.com/v1/oauth2/token" >'.$tokenfile.'.tmp 2>'.$path.'tdoa.err';
+    $cmdr = 'curl -s -X POST --header "Content-Type: application/x-www-form-urlencoded" -d "grant_type=refresh_token&refresh_token='.urlencode($d->refresh_token).'&access_type=offline&code=&client_id='.$appid.'&redirect_uri=" "https://api.tdameritrade.com/v1/oauth2/token" >'.$tokenfile.'.tmp 2>'.$path.'tdoa.err';
     system($cmdr);
     $tmp = file_get_contents($tokenfile.'.tmp');
     if (stristr($tmp, 'error') || !stristr($tmp, 'access_token') || !stristr($tmp, 'refresh_token')) {
